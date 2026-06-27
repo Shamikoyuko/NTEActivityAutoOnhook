@@ -9,19 +9,6 @@
   "version": "v1.0.5",
   "controller": [
     {
-      "name": "Win32",
-      "label": "默认控制",
-      "type": "Win32",
-      "permission_required": true,
-      "win32": {
-        "class_regex": "UnrealWindow",
-        "window_regex": "^\\s*(异环|NTE)\\s*$",
-        "screencap": "Background",
-        "mouse": "SendMessageWithCursorPos",
-        "keyboard": "PostMessage"
-      }
-    },
-    {
       "name": "Win32-Front",
       "label": "前台控制",
       "type": "Win32",
@@ -31,6 +18,19 @@
         "screencap": "PrintWindow",
         "mouse": "Seize",
         "keyboard": "Seize"
+      }
+    },
+    {
+      "name": "Win32",
+      "label": "普通控制",
+      "type": "Win32",
+      "permission_required": true,
+      "win32": {
+        "class_regex": "UnrealWindow",
+        "window_regex": "^\\s*(异环|NTE)\\s*$",
+        "screencap": "Background",
+        "mouse": "SendMessageWithCursorPos",
+        "keyboard": "PostMessage"
       }
     },
     {
@@ -65,7 +65,7 @@
   "group": [],
   "task": [
     {
-      "name": "开始黑暗赛车界",
+      "name": "开始黑暗赛车界（需要前台控制）",
       "entry": "开始黑暗赛车界"
     }
   ],
