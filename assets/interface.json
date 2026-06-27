@@ -19,7 +19,7 @@
     "controller": [
         {
             "name": "Win32",
-            "label": "$controller_default_label",
+            "label": "默认控制",
             "type": "Win32",
             "permission_required": true,
             "win32": {
@@ -32,7 +32,7 @@
         },
         {
             "name": "Win32-Front",
-            "label": "$controller_front_label",
+            "label": "前台控制",
             "type": "Win32",
             "win32": {
                 "class_regex": "UnrealWindow",
@@ -44,7 +44,7 @@
         },
         {
             "name": "Win32-Background",
-            "label": "$controller_background_label",
+            "label": "后台控制",
             "type": "Win32",
             "permission_required": true,
             "win32": {
@@ -59,7 +59,7 @@
     "resource": [
         {
             "name": "官服",
-            "label": "$resource_official_label",
+            "label": "官服资源包",
             "path": [
                 "resource/base"
             ]
@@ -72,11 +72,7 @@
         ]
     },
     "group": [
-        {
-            "name": "Daily",
-            "label": "$group.Daily.label",
-            "default_expand": true
-        }
+        {}
     ],
     "task": [{
         "name": "开始黑暗赛车界",
