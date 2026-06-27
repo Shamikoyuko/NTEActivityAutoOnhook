@@ -1,23 +1,47 @@
 {
-    "进入活动界面": {
+    "开始黑暗赛车界": {
         "recognition": "DirectHit",
+        "next": "进入活动界面"
+    },
+    "进入活动界面": {
         "action": "ClickKey",
         "key": 115,
-        "next": [
-            "进入黑暗赛车界界面"
-        ]
+        "recognition": "DirectHit",
+        "next": "进入黑暗赛车界界面",
+        "on_error": "进入活动界面",          // ★★★ 核心修复：当子节点识别超时时，回到自己重试
+        "timeout": 1000
     },
     "进入黑暗赛车界界面": {
         "recognition": "OCR",
+        "timeout": 1000,
         "expected": "黑暗赛车界",
         "action": "Click",
-        "next": [
-            "进入游戏"
-        ]
+        "next": "进入游戏",
+        "on_error": "进入活动界面"          // 保留此条，用于处理“识别成功但点击失败”的意外情况
     },
     "进入游戏": {
         "recognition": "OCR",
         "expected": "开始比赛",
-        "action": "Click"
+        "action": "Click",
+        "next": "等待加载"
+    },
+    "等待加载": {
+        "recognition": "DirectHit",
+        "pre_delay": 240000,
+        "next": "等待结算"
+    },
+    "等待结算": {
+        "recognition": "DirectHit",
+        "next": "检测并点击离开",
+        "on_error": "等待结算",
+        "timeout": 999999
+    },
+    "检测并点击离开": {
+        "recognition": "OCR",
+        "expected": ["离开"],
+        "timeout": 15000,
+        "pre_delay": 2000,
+        "action": "Click",
+        "next": "开始黑暗赛车界"
     }
 }
