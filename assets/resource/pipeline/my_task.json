@@ -1,12 +1,23 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {},
-    "MyTask4": {
-        "recognition": "Custom",
-        "custom_recognition": "my_reco_222",
-        "action": "Custom",
-        "custom_action": "my_action_111"
+    "进入活动界面": {
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 115,
+        "next": [
+            "进入黑暗赛车界界面"
+        ]
     },
-    "OcrTask": {}
+    "进入黑暗赛车界界面": {
+        "recognition": "OCR",
+        "expected": "黑暗赛车界",
+        "action": "Click",
+        "next": [
+            "进入游戏"
+        ]
+    },
+    "进入游戏": {
+        "recognition": "OCR",
+        "expected": "开始比赛",
+        "action": "Click"
+    }
 }
